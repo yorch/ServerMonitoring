@@ -31,7 +31,12 @@ class Server {
 	public $hostname;
 	public $services = array();
 	
+	// Legacy support for PHP4
 	function Server($hostname) {
+		$this->__construct($hostname);
+	}
+	
+	function __construct($hostname) {
 		$this->hostname = $hostname;
 	}
 	

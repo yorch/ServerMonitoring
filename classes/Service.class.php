@@ -32,7 +32,12 @@ class Service {
 	public $port;
 	public $status;
 	
+	// Legacy support for PHP4
 	function Service($name, $port) {
+		$this->__construct($name, $port);
+	}
+	
+	function __construct($name, $port) {
 		$this->name = $name;
 		$this->port = $port;
 	}
